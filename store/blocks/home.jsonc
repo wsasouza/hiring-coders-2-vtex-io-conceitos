@@ -1,14 +1,67 @@
 {
-  "store.home": { 
-    "blocks": [      
+  "store.home": {
+    "blocks": [
       "flex-layout.row",
       "slider-layout#home",
       "responsive-layout.desktop#desktop",
       "responsive-layout.mobile#mobile",
-      "tab-layout#home"
+      "tab-layout#home",
+      "modal-trigger#first",
+      "list-context.product-list"
+    ]
+  },
+  "list-context.product-list": {
+    "blocks": [
+      "product-summary.shelf"
+    ],
+    "children": [
+      "slider-layout"
+    ]
+  },
+  "product-summary.shelf": {
+    "children": [
+      "modal-trigger#quickview",
+      "product-summary-name",
+      "product-selling-price"
+    ]
+  },
+  "modal-trigger#quickview": {
+    "children": [
+      "product-summary-image",
+      "modal-layout#quickview"
+    ]
+  },
+  "modal-layout#quickview": {
+    "children": [
+      "product-summary-name",
+      "product-images",
+      "product-summary-sku-selector",
+      "product-summary-quantity",
+      "add-to-cart-button"
     ]
   },
   
+  "modal-trigger#first": {
+    "children": [
+      "rich-text#trigger",
+      "modal-layout#first"
+    ]
+  },
+  "rich-text#trigger": {
+    "props": {
+      "text": "CLICK ME"
+    }
+  },
+  "modal-layout#first": {
+    "children": [
+      "rich-text#hello"
+    ]
+  },
+  "rich-text#hello": {
+    "props": {
+      "text": "Hello Wart"
+    }
+  },
   "tab-layout#home": {
     "children": [
       "tab-list#home",
@@ -19,7 +72,7 @@
     "children": [
       "tab-list.item#home1",
       "tab-list.item#home2"
-      ]
+    ]
   },
   "tab-list.item#home1": {
     "props": {
@@ -38,7 +91,7 @@
     "children": [
       "tab-content.item#home1",
       "tab-content.item#home2"
-      ]
+    ]
   },
   "tab-content.item#home1": {
     "children": [
@@ -70,14 +123,18 @@
       "font": "t-heading-3"
     }
   },
-
-
   "responsive-layout.desktop#desktop": {
-    "children": ["rich-text#desktop", "image#desktop"]
-  },  
+    "children": [
+      "rich-text#desktop",
+      "image#desktop"
+    ]
+  },
   "responsive-layout.mobile#mobile": {
-    "children": ["rich-text#mobile", "image#mobile"]
-  },  
+    "children": [
+      "rich-text#mobile",
+      "image#mobile"
+    ]
+  },
   "rich-text#desktop": {
     "props": {
       "text": "# Your Coffee, Your Way \n ### New Coffee Makers Collection (I'm on desktop)",
@@ -90,11 +147,11 @@
       "src": "https://appliancetheme.vteximg.com.br/arquivos/Responsive-Image-Desktop.jpg?q=1",
       "link": {
         "url": "/small-appliances/coffee-makers"
-      } ,
+      },
       "maxWidth": "100%",
       "alt": "Coffee Makers Collection"
     }
-  },  
+  },
   "rich-text#mobile": {
     "props": {
       "text": "### Your Coffee, Your Way \n #### New Coffee Makers Collection (I'm on mobile)",
@@ -107,22 +164,21 @@
       "src": "https://appliancetheme.vteximg.com.br/arquivos/Responsive-Image-Mobile.jpg?q=1",
       "link": {
         "url": "/small-appliances/coffee-makers"
-      } ,
+      },
       "maxWidth": "100%",
       "alt": "Coffee Makers Collection"
     }
   },
-
-  "flex-layout.row":{
+  "flex-layout.row": {
     "children": [
       "info-card#rethink",
-      "flex-layout.col"      
+      "flex-layout.col"
     ]
   },
-  "flex-layout.col":{
+  "flex-layout.col": {
     "children": [
       "image#electronics",
-      "image#major-appliance"      
+      "image#major-appliance"
     ]
   },
   "info-card#rethink": {
@@ -146,6 +202,4 @@
       "maxWidth": "100%"
     }
   }
-
-  
 }
